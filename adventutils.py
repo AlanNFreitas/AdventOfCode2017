@@ -11,6 +11,9 @@ def input_string():
 def read_matrix(file, convert=str):    
     return (list(map(convert,line.strip().split('\t'))) for line in file)
 
+def read_phrases(file):
+    return [line.strip().split(' ') for line in file]
+
 def print_matrix(matrix):
     for row in matrix:
         for element in row:
