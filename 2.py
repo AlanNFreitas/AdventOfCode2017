@@ -1,7 +1,7 @@
-import adventutils
+from adventutils import input_file
+from adventutils import read_matrix
 
-def inv_captcha(n):
-    return sum([int(n[i]) for i in range(len(n)) if n[i] == n[i - len(n) // 2]])
-
-captcha = adventutils.input_string()
-print(inv_captcha(captcha))
+file = input_file()
+matrix = read_matrix(file, convert=int)
+s = sum([sum([-min(row), max(row)]) for row in matrix])
+print(s)
