@@ -7,3 +7,23 @@ def input_file():
 
 def input_string():
     return input_file().read().rstrip('\n')
+
+def read_matrix(file, convert=str):    
+    return (list(map(convert,line.strip().split('\t'))) for line in file)
+
+def print_matrix(matrix):
+    for row in matrix:
+        for element in row:
+            print('{}\t'.format(element), end='')
+        print('')
+
+def manhattan(x1, y1, x2, y2):
+    return abs(x2 - x1) + abs(y2 - y1)
+
+def matrix_center(matrix):
+    c = len(matrix) // 2
+    return c
+
+    
+
+
